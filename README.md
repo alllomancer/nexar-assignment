@@ -55,7 +55,9 @@ For example, if the web server is serving at http://localhost:8080, and the word
 The app currently has a `Dockerfile` included under `doc-search/`.
 
 1. Every commit to application code (`.py` files) results in a slow build of the container image. Modify the `Dockerfile` to make the build faster.
+<Answer> moving the /src to a higher layer in the docker file will resolve this issue
 2. How can you minimize the size of the resulting container image? Modify the `Dockerfile` or describe your solution.
+<Answer> changing the base image to alpine reduced the image to 56 MB, separating the dockerfile with multistage would have reduced it further to 50MB, i decided that an extra 6 MB wasnt worth the change, in other languages like GO the multistage would have worked better but python is a run time compiled language.
 
 ### Part 2: Deploying to Kubernetes
 
