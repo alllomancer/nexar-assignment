@@ -1,0 +1,13 @@
+
+
+replicaCount: 1
+
+image:
+  repository: doc-search
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+
+service:
+  type: NodePort
+  port: 80
