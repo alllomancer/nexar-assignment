@@ -71,6 +71,8 @@ Here you will deploy the application to a local Minikube.
 3. Verify that you can call the service from outside the cluster.
 4. We want Kubernetes to tolerate a slow start for our app. Implement this behavior in your chart. Bonus points if you can simulate a slow start and test your solution.
 
+*Answer: adding an init container that just waits 10 seconds simulated the slow start*
+
 ### Part 3: Observability
 
 1. In the app's Python code, instrument latency of the `search/` endpoint, and expose a metrics HTTP endpoint on port `8000`. You may use any open-source library for this purpose.
@@ -78,6 +80,8 @@ Here you will deploy the application to a local Minikube.
 3. Using a load generator like [`hey`](https://github.com/rakyll/hey), generate some load on the app.
 4. Using the built-in web UI for Prometheus, chart the p50, p90, p99 latencies of `search/` requests over the load you generated before.
 5. (Bonus) which other key metrics are important/useful to instrument in a web service like this? Add them as you see fit and show how you can query them in Prometheus.
+
+*Answer: deployed pr7s to minikube, but didnt instrument the python since exposing another metric endpoint meant adding another webserver, much easier to implement in GO. other key metrics are: Requests per seconds, error rate, and uptime*
 ---
 
 Good luck!
