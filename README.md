@@ -82,6 +82,7 @@ Here you will deploy the application to a local Minikube.
 5. (Bonus) which other key metrics are important/useful to instrument in a web service like this? Add them as you see fit and show how you can query them in Prometheus.
 
 *Answer: deployed pr7s to minikube, but didnt instrument the python since exposing another metric endpoint meant adding another webserver, much easier to implement in GO. other key metrics are: Requests per seconds, error rate, and uptime*
+
 ---
 
 Good luck!
